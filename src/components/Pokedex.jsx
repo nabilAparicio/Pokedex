@@ -10,6 +10,13 @@ const Pokedex = () => {
   const [PokeLimit, setPokeLimit] = useState(20);
   const [offSet, setOffSet] = useState(0);
   const URL = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${PokeLimit}`;
+  const bgStyle = {
+    backGColor: {
+      backgroundImage: `url(src/assets/images/BG.png)`,
+      backgroundRepeat: "repeat",
+      backgroundSize: "contain",
+    },
+  };
 
   useEffect(() => {
     axios
@@ -19,7 +26,7 @@ const Pokedex = () => {
   }, [offSet]);
 
   return (
-    <div>
+    <div className="bg-red-50 p-5 pt-10 ">
       <div>
         <PokeHero />
       </div>

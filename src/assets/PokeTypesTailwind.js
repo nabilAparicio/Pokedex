@@ -1,0 +1,21 @@
+const pokemonTypes = {
+  normal: "#ca98a7",
+  fighting: "#ef6138)",
+  flying: "#93b2c7",
+  rock: "#8b3e21",
+  bug: "#3B9950",
+  ghost: "#906790",
+  steel: "#42bd94",
+  fire: "#ff4b5a",
+  water: "#86a8fc",
+  electric: "#fbfb70",
+  psychic: "#f91c8f",
+  ice: "#daf0ff",
+  dark: "#5A5979",
+  dragon: "#61cad9",
+  fairy: "rose-400",
+  shadow: "zinc-300",
+  poison: "#9b69d9",
+  grass: "#27cb4f",
+};
+export default pokemonTypes;

@@ -3,9 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CardLoader from "../Loaders/CardLoader";
 import { Link } from "react-router-dom";
+import pokemonTypes from "../../assets/PokeTypesTailwind";
 const PokemonCard = ({ pokemon }) => {
   const URL = pokemon;
   const [PokeCard, setPokeCard] = useState();
+  const typeColor = pokemonTypes[PokeCard?.types[0].type.name] || "slate-100";
+  const bgStyle = {
+    backGColor: { backgroundColor: `${typeColor}` },
+  };
+
   useEffect(() => {
     axios
       .get(URL)
@@ -29,10 +35,13 @@ const PokemonCard = ({ pokemon }) => {
                 <h1 class="text-white text-3xl mb-3 transform translate-y-20 group-hover:-translate-y-0 duration-300">
                   {PokeCard.name}
                 </h1>
-                <div class="w-16 h-2 bg-yellow-500 rounded-full mb-3 transform translate-y-20 group-hover:translate-y-0 duration-300"></div>
+                <div
+                  class="w-16 h-4 bg-yellow-500 text-xs text-center  rounded-full mb-3 transform translate-y-20 group-hover:translate-y-0 duration-300"
+                  style={bgStyle.backGColor}
+                ></div>
                 <div className="w-full ">
                   <p class="opacity-0  text-white text-md group-hover:opacity-80 transform duration-500">
-                    Weigth: {PokeCard.weight}
+                    Type: {PokeCard.types[0].type.name}
                     <br />
                     Base Experience: {PokeCard.base_experience}
                     <br />

@@ -6,7 +6,7 @@ const Pagination = ({ pokemons, pokelimit, setOffSet, offSet }) => {
   const Pcount = Math.ceil(count / pokelimit);
   return (
     <div>
-      <div className="m-5 sm:flex-1 sm:flex sm:items-center sm:justify-between">
+      <div className="mt-5 sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
           <p class="text-sm  text-gray-700">
             Showing

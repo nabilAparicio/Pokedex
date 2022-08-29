@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const PokeHero = () => {
   const nameTrainer = useSelector((state) => state.nameTrainerSlice);
   return (
-    <div className="flex flex-col items-center my-28">
+    <div className="flex flex-col items-center mb-28">
       <h1 className="text-4xl font-extrabold ">Welcome to your Pokedex</h1>
       <p className="mt-5">
         Hi
