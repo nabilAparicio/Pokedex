@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import CardLoader from "../Loaders/CardLoader";
 import { Link } from "react-router-dom";
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({url}) => {
   
-  const URL = pokemon;
+  const URL = url;
   const [PokeCard, setPokeCard] = useState();
   
   useEffect(() => {
@@ -14,8 +14,8 @@ const PokemonCard = ({ pokemon }) => {
       .get(URL)
       .then((res) => setPokeCard(res.data))
       .catch((err) => console.log(err));
-  }, []);
-
+  }, [url]);
+console.log(url)
   return (
     <div>
       {PokeCard ? (

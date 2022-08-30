@@ -24,6 +24,7 @@ const Pokedex = () => {
       .catch((err) => console.log(err));
   }, [offSet]);
 
+
   return (
     <div>
       <div>
@@ -31,9 +32,9 @@ const Pokedex = () => {
       </div>
       <div className="action_menu">
           <Search pokemonSearch={pokemonSearch} setPokemonSearch={setPokemonSearch}/>
-         <Filters setPokemons={setPokemons}/>
+          <Filters setPokemons={setPokemons}/>
        </div>
-      <PokeMain pokemon={Pokemons} setPokemons={setPokemons} pokemonSearch={pokemonSearch}/>
+      <PokeMain Pokemons={Pokemons} setPokemons={setPokemons} pokemonSearch={pokemonSearch}/>
       
       {Pokemons ? (
         <Pagination
