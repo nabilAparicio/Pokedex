@@ -15,7 +15,7 @@ const PokemonCard = ({url}) => {
       .then((res) => setPokeCard(res.data))
       .catch((err) => console.log(err));
   }, [url]);
-console.log(url)
+
   return (
     <div>
       {PokeCard ? (

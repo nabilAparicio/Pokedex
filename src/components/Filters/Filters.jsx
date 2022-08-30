@@ -22,7 +22,7 @@ const Filters = ({setPokemons}) => {
                 const element = filterPokemon[i].pokemon;
                 change.push(element)
             }
-           setPokemons(change)
+            setPokemons(change)
         }
     
         }, [filterPokemon])
@@ -32,7 +32,7 @@ const Filters = ({setPokemons}) => {
             .then(res => setFilterPokemon(res.data.pokemon))
             .catch(err=>console.log(err))
         }
-      
+  
     
       return (
         <div>

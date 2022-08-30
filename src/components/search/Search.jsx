@@ -12,11 +12,11 @@ const Search = ({pokemonSearch, setPokemonSearch}) => {
           setSearch(e.target.search.value)
           setPokemonSearch(`https://pokeapi.co/api/v2/pokemon/${e.target.search.value}`)
         }else{
-         setPokemonSearch('')
+          setPokemonSearch('')
         }
    
        }
-  console.log(search)
+
     return (
          <form onSubmit={handleSubmit}>
         <input className="search" 
