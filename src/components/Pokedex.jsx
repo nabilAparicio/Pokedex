@@ -4,9 +4,15 @@ import PokemonCard from "./Pokedex/PokemonCard";
 import { useState, useEffect } from "react";
 import Pagination from "./Pokedex/Pagination";
 import PokeHero from "./Pokedex/PokeHero";
+import PokeMain from "./PokeMain";
+import Search from "./search/search";
+import Filters from "./Filters/Filters";
+
+
 
 const Pokedex = () => {
   const [Pokemons, setPokemons] = useState();
+  const [pokemonSearch, setPokemonSearch] = useState()
   const [PokeLimit, setPokeLimit] = useState(20);
   const [offSet, setOffSet] = useState(0);
   const URL = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${PokeLimit}`;
@@ -23,11 +29,12 @@ const Pokedex = () => {
       <div>
         <PokeHero />
       </div>
-      <div className="flex justify-center flex-wrap gap-4">
-        {Pokemons?.results.map((pokemon) => (
-          <PokemonCard key={pokemon.url} pokemon={pokemon.url} />
-        ))}
-      </div>
+      <div className="action_menu">
+          <Search pokemonSearch={pokemonSearch} setPokemonSearch={setPokemonSearch}/>
+         <Filters setPokemons={setPokemons}/>
+       </div>
+      <PokeMain pokemon={Pokemons} setPokemons={setPokemons} pokemonSearch={pokemonSearch}/>
+      
       {Pokemons ? (
         <Pagination
           pokemons={Pokemons}

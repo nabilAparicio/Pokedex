@@ -11,6 +11,7 @@ const PokeHero = () => {
         <span className="font-bold"> {nameTrainer} </span>
         here you can find all the info about your pokemons{" "}
       </p>
+     
     </div>
   );
 };
