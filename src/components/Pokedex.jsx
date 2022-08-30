@@ -4,19 +4,13 @@ import PokemonCard from "./Pokedex/PokemonCard";
 import { useState, useEffect } from "react";
 import Pagination from "./Pokedex/Pagination";
 import PokeHero from "./Pokedex/PokeHero";
+import Search from "./Pokedex/Search/Search";
 
 const Pokedex = () => {
   const [Pokemons, setPokemons] = useState();
   const [PokeLimit, setPokeLimit] = useState(20);
   const [offSet, setOffSet] = useState(0);
   const URL = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${PokeLimit}`;
-  const bgStyle = {
-    backGColor: {
-      backgroundImage: `url(src/assets/images/BG.png)`,
-      backgroundRepeat: "repeat",
-      backgroundSize: "contain",
-    },
-  };
 
   useEffect(() => {
     axios
@@ -29,6 +23,9 @@ const Pokedex = () => {
     <div className="bg-red-50 p-5 pt-10 ">
       <div>
         <PokeHero />
+      </div>
+      <div>
+        <Search />
       </div>
       <div className="flex justify-center flex-wrap gap-4">
         {Pokemons?.results.map((pokemon) => (
