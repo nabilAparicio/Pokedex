@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import Pagination from "./Pokedex/Pagination";
 import PokeHero from "./Pokedex/PokeHero";
 import Search from "./Pokedex/Search/Search";
-
 const Pokedex = () => {
   const [Pokemons, setPokemons] = useState();
   const [PokeLimit, setPokeLimit] = useState(20);
