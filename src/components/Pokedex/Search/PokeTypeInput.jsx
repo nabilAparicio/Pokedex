@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import axios from "axios";
-
+import { useDispatch } from "react-redux";
+import { setTypeName } from "../../../store/slice/pokeTypeName.slice";
 const PokeTypeInput = () => {
+  const dispatch = useDispatch();
   const [PokeTypes, setPokeTypes] = useState();
   const URL = "https://pokeapi.co/api/v2/type/";
   useEffect(() => {
@@ -15,6 +17,7 @@ const PokeTypeInput = () => {
     <div>
       <div class=" relative ">
         <input
+          onChange={(e) => dispatch(setTypeName(e.target.value))}
           list="pokemonTypes"
           type="text"
           id="rounded-email"
