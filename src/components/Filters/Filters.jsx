@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-
 import { useEffect,useState } from 'react'
+
 const Filters = ({setPokemons}) => {
 
         const [typePokemon, setTypePokemon] = useState()
@@ -39,8 +39,8 @@ const Filters = ({setPokemons}) => {
         <select className='filter_options' onChange={handleFilter2}>
             <option value=''>All</option>
             {
-                typePokemon?.map(pokemons => (
-                    <option  value={pokemons.name} key={pokemons.name}>{pokemons.name}</option>
+                typePokemon?.map(types => (
+                    <option  value={types.name} key={types.name}>{types.name}</option>
                 ))
             }
         </select>

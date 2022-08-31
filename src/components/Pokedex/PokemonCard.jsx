@@ -4,18 +4,21 @@ import { useEffect, useState } from "react";
 import CardLoader from "../Loaders/CardLoader";
 import { Link } from "react-router-dom";
 
-const PokemonCard = ({url}) => {
+const PokemonCard = ({pokemon}) => {
   
-  const URL = url;
+
+
   const [PokeCard, setPokeCard] = useState();
   
+
   useEffect(() => {
     axios
-      .get(URL)
+      .get(pokemon)
       .then((res) => setPokeCard(res.data))
       .catch((err) => console.log(err));
-  }, [url]);
+  }, []);
 
+  console.log(pokemon)
   return (
     <div>
       {PokeCard ? (

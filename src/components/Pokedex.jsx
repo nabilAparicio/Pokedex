@@ -11,18 +11,20 @@ import Filters from "./Filters/Filters";
 
 
 const Pokedex = () => {
-  const [Pokemons, setPokemons] = useState();
+  const [pokemons, setPokemons] = useState();
   const [pokemonSearch, setPokemonSearch] = useState()
   const [PokeLimit, setPokeLimit] = useState(20);
   const [offSet, setOffSet] = useState(0);
   const URL = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${PokeLimit}`;
 
   useEffect(() => {
+    const url=`https://pokeapi.co/api/v2/pokemon`
     axios
-      .get(URL)
-      .then((res) => setPokemons(res.data))
+      .get(url)
+      .then((res) => setPokemons(res.data.results))
       .catch((err) => console.log(err));
-  }, [offSet]);
+  }, []);
+
 
 
   return (
@@ -34,11 +36,13 @@ const Pokedex = () => {
           <Search pokemonSearch={pokemonSearch} setPokemonSearch={setPokemonSearch}/>
           <Filters setPokemons={setPokemons}/>
        </div>
-      <PokeMain Pokemons={Pokemons} setPokemons={setPokemons} pokemonSearch={pokemonSearch}/>
+      {
+      pokemons && <PokeMain pokemons={pokemons} setPokemons={setPokemons} pokemonSearch={pokemonSearch}/>
+      } 
       
-      {Pokemons ? (
+      {pokemons ? (
         <Pagination
-          pokemons={Pokemons}
+          pokemons={pokemons}
           pokelimit={PokeLimit}
           setOffSet={setOffSet}
           offSet={offSet}
