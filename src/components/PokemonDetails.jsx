@@ -14,7 +14,7 @@ const PokemonDetails = () => {
   const typeColor = pokemonTypes[Pokemon?.types[0].type.name] || 'slate-100'
   const bgStyle = {
     backGColor: {
-      backgroundImage: `url(src/assets/images/BG.png)`,
+      backgroundImage: `url(https://github.com/nabilAparicio/Pokedex/blob/main/src/assets/images/BG.png?raw=true)`,
       backgroundRepeat: 'repeat',
       backgroundSize: 'contain',
       backgroundColor: `${typeColor}`

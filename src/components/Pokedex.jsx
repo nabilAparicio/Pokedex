@@ -19,7 +19,7 @@ const Pokedex = () => {
 
   const bgStyle = {
     backGColor: {
-      backgroundImage: `url(src/assets/images/BG.png)`,
+      backgroundImage: `url(https://github.com/nabilAparicio/Pokedex/blob/main/src/assets/images/BG.png?raw=true)`,
       backgroundRepeat: 'repeat',
       backgroundSize: 'contain'
     }

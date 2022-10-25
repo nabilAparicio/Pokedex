@@ -22,7 +22,10 @@ const Login = () => {
       <div className=" text-center bg-slate-200 p-7 rounded-md shadow-lg my-auto h-max">
         <h1 className="font-bold m-3 text-6xl ">Hello Trainer!</h1>
         <div className="h-96 mx-auto w-96">
-          <img src="src/assets/images/trainer.png" alt="trainer-img" />
+          <img
+            src="https://github.com/nabilAparicio/Pokedex/blob/main/src/assets/images/trainer.png?raw=true"
+            alt="trainer-img"
+          />
         </div>
         <div>
           <form action="submit" onSubmit={handleSubmit}>
