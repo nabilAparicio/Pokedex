@@ -1,7 +1,5 @@
-import React from "react";
-
 const PokeImages = ({ Pokemon }) => {
-  console.log(Pokemon);
+  console.log(Pokemon)
   return (
     <div className="flex bg-white justify-center rounded shadow-md flex-wrap">
       <div className="flex">
@@ -23,7 +21,7 @@ const PokeImages = ({ Pokemon }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PokeImages;
+export default PokeImages

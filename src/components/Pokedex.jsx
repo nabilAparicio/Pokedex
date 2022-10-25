@@ -1,39 +1,34 @@
-import axios from "axios";
-import React from "react";
-import PokemonCard from "./Pokedex/PokemonCard";
-import { useState, useEffect } from "react";
-import Pagination from "./Pokedex/Pagination";
-import PokeHero from "./Pokedex/PokeHero";
-import Search from "./Pokedex/Search/Search";
-import { useSelector } from "react-redux";
+import axios from 'axios'
+import PokemonCard from './Pokedex/PokemonCard'
+import { useState, useEffect } from 'react'
+import Pagination from './Pokedex/Pagination'
+import PokeHero from './Pokedex/PokeHero'
 const Pokedex = () => {
-  const [Pokemons, setPokemons] = useState();
-  const [PokeLimit, setPokeLimit] = useState(20);
-  const [offSet, setOffSet] = useState(0);
-  const Toggle = useSelector((state) => state.toggleSwitchSlice);
-  const TypeName = useSelector((state) => state.pokeTypeNameSlice);
+  const [Pokemons, setPokemons] = useState()
+  const [PokeLimit] = useState(20)
+  const [offSet, setOffSet] = useState(0)
 
-  const DefaultURL = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${PokeLimit}`;
-  const Searchurl =
-    Toggle == false
-      ? `https://pokeapi.co/api/v2/type/${TypeName}`
-      : `https://pokeapi.co/api/v2/pokemon/${TypeName}`;
-  const URL = TypeName == "" ? DefaultURL : Searchurl;
-  console.log(URL);
+  const URL = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${PokeLimit}`
+
   useEffect(() => {
     axios
       .get(URL)
       .then((res) => setPokemons(res.data))
-      .catch((err) => console.log(err));
-  }, [offSet, TypeName]);
+      .catch((err) => console.log(err))
+  }, [offSet])
+
+  const bgStyle = {
+    backGColor: {
+      backgroundImage: `url(src/assets/images/BG.png)`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: 'contain'
+    }
+  }
 
   return (
-    <div className="bg-red-50 p-5 pt-10 ">
+    <div style={bgStyle.backGColor} className="bg-red-50 p-5 pt-10 ">
       <div>
         <PokeHero />
-      </div>
-      <div>
-        <Search />
       </div>
       <div className="flex justify-center flex-wrap gap-4">
         {Pokemons ? (
@@ -55,7 +50,7 @@ const Pokedex = () => {
         <div>loading</div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Pokedex;
+export default Pokedex

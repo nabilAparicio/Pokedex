@@ -1,5 +1,4 @@
-import React from "react";
-import Type from "./Type";
+import Type from './Type'
 
 const TypeCard = ({ Pokemon }) => {
   return (
@@ -11,7 +10,7 @@ const TypeCard = ({ Pokemon }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TypeCard;
+export default TypeCard

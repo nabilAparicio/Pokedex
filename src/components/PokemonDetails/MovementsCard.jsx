@@ -1,5 +1,3 @@
-import React from "react";
-
 const MovementsCard = ({ Pokemon }) => {
   return (
     <div>
@@ -12,7 +10,7 @@ const MovementsCard = ({ Pokemon }) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default MovementsCard;
+export default MovementsCard

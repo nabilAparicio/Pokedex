@@ -1,23 +1,22 @@
-import React from "react";
-import { MdCatchingPokemon } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { setNameTrainer } from "../store/slice/name.slice";
+import { MdCatchingPokemon } from 'react-icons/md'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { setNameTrainer } from '../store/slice/name.slice'
 
 const Login = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const inputValue = e.target.name.value.trim();
+    e.preventDefault()
+    const inputValue = e.target.name.value.trim()
     if (inputValue.length !== 0) {
-      dispatch(setNameTrainer(inputValue));
-      navigate("/pokedex");
+      dispatch(setNameTrainer(inputValue))
+      navigate('/pokedex')
     }
-    e.target.name.value = "";
-  };
+    e.target.name.value = ''
+  }
   return (
     <div className="flex bg-slate-50 place-content-center min-h-screen">
       <div className=" text-center bg-slate-200 p-7 rounded-md shadow-lg my-auto h-max">
@@ -48,7 +47,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
